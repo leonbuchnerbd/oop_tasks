@@ -4,7 +4,7 @@
 #include "Tournament.h"
 #include <iostream>
 
-namespace task6 {
+namespace task7 {
     Tournament::Tournament(std::string title, Team* source_teams, int size)
         : title(title), size(size), teams(copy_from_array(source_teams, size)) {}
 

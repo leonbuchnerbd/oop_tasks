@@ -6,7 +6,7 @@
 #include <iostream>
 #include <cassert>
 
-namespace task6 {
+namespace task7 {
 
     std::ostream& operator<<(std::ostream& os, const Team& t) {
         os << t.get_name() << ": " << t.get_goals();
@@ -27,42 +27,29 @@ namespace task6 {
         return os;
     }
 
-    void test() {
+    void task1A() {
         Team mordor("mordor", 23);
         Team gondor("gondor");
-        Team shire("shire");
-        Team teams[] = {mordor, gondor, shire};
-        Tournament fifa("FIFA Middleearth", teams, 3);
-        std::cout << fifa << std::endl;
+        gondor = mordor;
+        assert(gondor==mordor);
     }
 
-    void test_contains() {
+    void task1B() {
         Team mordor("mordor", 23);
         Team gondor("gondor");
-        Team another_gondor("gondor");
-        Team another_mordor("mordor");
         Team teams[] = {mordor, gondor};
         Tournament fifa("FIFA Middleearth", teams, 2);
-        assert(fifa.contains(another_gondor));
-        assert(!fifa.contains(another_mordor));
-    }
+        Tournament copy("Nothing", nullptr, 0);
+        copy = fifa;
+        assert(copy == fifa);
+        fifa.remove(0);
+        assert(copy.get_team(0) == mordor);
 
-    void test_contains_not() {
-        Team mordor("mordor", 23);
-        Team gondor("gondor");
-        Team another_gondor("gondor");
-        Team another_mordor("mordor");
-        Team teams[] = {mordor, gondor};
-        Tournament fifa("FIFA Middleearth", teams, 2);
-        assert(!fifa.containsNot(another_gondor));
-        assert(fifa.containsNot(another_mordor));
     }
 
     void main() {
         std::cout << "start task6 ...." << std::endl;
-        test();
-        test_contains();
-        test_contains_not();
+        task1A();
         std::cout << "finished task6" << std::endl;
     }
 

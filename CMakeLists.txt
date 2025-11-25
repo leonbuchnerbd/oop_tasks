@@ -29,4 +29,8 @@ add_executable(Task1 main.cpp
         task6/Tournament.cpp
         task6/Team.cpp
         task6/Task6.h
-        task6/Team.h)
+        task6/Team.h
+        task7/Tournament.cpp
+        task7/Task7.h
+        task7/Task7.cpp
+        task7/Team.cpp)

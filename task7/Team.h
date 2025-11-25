@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-namespace task6 {
+namespace task7 {
     class Team {
         int goal = 0;
         std::string team_name;

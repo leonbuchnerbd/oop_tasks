@@ -9,12 +9,14 @@
 
 int main() {
     std::cout << "start testing ...." << std::endl;
-    /*task1::main();
+    /*
+    task1::main();
     task2::main();
     task3::main();
     task4::main();
     task4::main();
-    task5::main();*/
+    task5::main();
+    */
     task6::main();
     std::cout << "All done." << std::endl;
     return 0;

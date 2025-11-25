@@ -4,7 +4,7 @@
 
 #include "Team.h"
 
-namespace task6 {
+namespace task7 {
     Team::Team(std::string team_name) : team_name(team_name), goal(0) {}
     Team::Team(std::string team_name, int goal) : team_name(team_name), goal(goal) {}
 
