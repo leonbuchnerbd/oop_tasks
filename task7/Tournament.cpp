@@ -12,6 +12,20 @@ namespace task7 {
         : title(other.title), size(other.size),
           teams(copy_from_pointers(other.teams, other.size)) {}
 
+    Tournament& Tournament::operator=(const Tournament& other) {
+        if (this == &other) {
+            return *this;
+        }
+        delete[] teams;
+
+        title = other.title;
+        size = other.size;
+
+        teams = copy_from_pointers(other.teams, other.size);
+
+        return *this;
+    }
+
     Tournament::~Tournament() {
         for (int i = 0; i < size; ++i)
             delete teams[i];
@@ -98,4 +112,20 @@ namespace task7 {
         }
         return true;
     }
+
+    bool Tournament::operator==(const Tournament &other) const {
+        if (size != other.size) {
+            return false;
+        }
+        if (title != other.title) {
+            return false;
+        }
+        for (int i = 0; i < size; ++i) {
+            if (get_team(i) != other.get_team(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

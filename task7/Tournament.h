@@ -19,6 +19,7 @@ namespace task7 {
     public:
         Tournament(std::string title, Team* teams,int size);
         Tournament(const Tournament& other);
+        Tournament& operator=(const Tournament& other);
         ~Tournament();
         void set_team(int index, const Team *team);
         std::string get_title() const;
@@ -27,6 +28,7 @@ namespace task7 {
         void remove(int index);
         bool contains(const Team &other) const;
         bool containsNot(const Team &other) const;
+        bool operator==(const Tournament &) const;
     };
 
     std::ostream operator<<(const std::ostream & lhs, const Tournament & rhs);
