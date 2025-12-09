@@ -76,6 +76,7 @@ namespace task8 {
         arrayTest();
         testSort();
         swapTestTeam();
+        // unique pointer bricht es direkt ab
         std::cout << "finished task8" << std::endl;
     }
 }
